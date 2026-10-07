@@ -3,61 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jaan Kollamaa - Tutvustus</title>
+    <meta name="description" content="Jaan Kollamaa tutvustus, huvid ja kontaktandmed.">
+    <title>Jaan Kollamaa – tutvustus</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 2rem;
             line-height: 1.6;
             color: #333;
         }
+
         header {
             text-align: center;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
             border-bottom: 2px solid #e0e0e0;
         }
+
         h1 {
-            font-size: 2.5rem;
+            font-size: clamp(2rem, 6vw, 2.5rem);
             margin-bottom: 0.5rem;
             color: #2c3e50;
         }
+
         .title {
             font-size: 1.2rem;
             color: #666;
         }
+
         .profile-image {
             display: block;
             max-width: 100%;
             height: auto;
             margin: 2rem auto;
             border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
         section {
             margin-bottom: 2rem;
         }
+
         h2 {
             font-size: 1.5rem;
             color: #2c3e50;
             border-bottom: 1px solid #e0e0e0;
             padding-bottom: 0.5rem;
         }
+
         ul {
             padding-left: 1.5rem;
         }
+
         li {
             margin-bottom: 0.5rem;
         }
+
         a {
-            color: #3498db;
+            color: #2471a3;
             text-decoration: none;
         }
-        a:hover {
+
+        a:hover,
+        a:focus-visible {
             text-decoration: underline;
         }
+
         footer {
             text-align: center;
             padding-top: 2rem;
@@ -65,40 +82,47 @@
             color: #888;
             font-size: 0.9rem;
         }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1.25rem;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Jaan Kollamaa</h1>
-        <p class="title">Tehniline Toe Vanemspetsialist Cleveron AS-is</p>
+        <p class="title">Tehnilise toe vanemspetsialist ettevõttes Cleveron AS</p>
     </header>
 
     <main>
-        <img 
-            src="profile.png" 
-            alt="Minu pilt" 
+        <img
+            src="profile.png"
+            alt="Jaan Kollamaa profiilipilt"
             class="profile-image"
         >
 
         <section>
-            <h2>Lühike tutvustus</h2>
+            <h2>Lühitutvustus</h2>
             <p>
-                Tere! Minu nimi on Jaan Kollamaa ja ma töötan <strong>Cleveron AS-is</strong> 
-                Tehnilise Toe Vanemspetsialistina. Minu päevakord hõlmab keeruliste tehniliste 
-                probleemide lahendamist ja klienditoega.
+                Tere! Mina olen Jaan Kollamaa ja töötan ettevõttes
+                <strong>Cleveron AS</strong> tehnilise toe vanemspetsialistina.
+                Minu töö hõlmab keerukate tehniliste probleemide lahendamist
+                ja klientide abistamist.
             </p>
             <p>
-                Olenevalt sellest, et minu töökeskkond on sügavalt tehnoloogilised, on ma arendanud 
-                tugeva huvi uute lahenduste, automaatika ja tarkvaraarenduse vastu.
+                Tehnoloogiarikkas töökeskkonnas töötamine on süvendanud minu
+                huvi uute lahenduste, automatiseerimise ja tarkvaraarenduse vastu.
             </p>
         </section>
 
         <section>
             <h2>Hobid ja huvid</h2>
             <ul>
-                <li><strong>Muusika</strong> – kuulan erinevaid žanre ja nautin elus kontsertide külastamist</li>
-                <li><strong>Arvutimängud</strong> – nii üksikmängijana kui ka koos sõpradega</li>
-                <li><strong>Tehnoloogia</strong> – jälgin uusi arenguid, proovin uusi vahendeid ja õpin programmeerimist</li>
+                <li><strong>Muusika</strong> – kuulan eri žanrite muusikat ja mulle meeldib kontsertidel käia.</li>
+                <li><strong>Arvutimängud</strong> – mängin nii üksinda kui ka koos sõpradega.</li>
+                <li><strong>Tehnoloogia</strong> – jälgin uusi arengusuundi, katsetan uusi tööriistu ja õpin programmeerimist.</li>
             </ul>
         </section>
 
@@ -120,7 +144,7 @@
     </main>
 
     <footer>
-        <p>Loodud 2026 &copy; Jaan Kollamaa</p>
+        <p>&copy; 2026 Jaan Kollamaa</p>
     </footer>
 </body>
 </html>
