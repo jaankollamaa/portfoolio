@@ -1,151 +1,577 @@
-<!DOCTYPE html>
-<html lang="et">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Jaan Kollamaa tutvustus, huvid ja kontaktandmed.">
-    <title>Jaan Kollamaa – tutvustus</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The personal portfolio of Jaan Kollamaa — Senior Technical Support Specialist, software development student, and technology enthusiast.">
+  <meta name="theme-color" content="#f6f7f9">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jaan Kollamaa | Portfolio">
+  <meta property="og:description" content="A little about my work, my interests, and my journey into software development.">
+  <meta property="og:image" content="profile.png">
+  <meta name="author" content="Jaan Kollamaa">
+  <title>Jaan Kollamaa | Portfolio</title>
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-            line-height: 1.6;
-            color: #333;
-        }
+  <style>
+    :root {
+      color-scheme: light;
+      --page: #f6f7f9;
+      --surface: #ffffff;
+      --surface-soft: #eef2f7;
+      --ink: #172033;
+      --muted: #647084;
+      --line: #e2e7ee;
+      --accent: #315fce;
+      --accent-dark: #244aa6;
+      --accent-soft: #e9efff;
+      --radius: 20px;
+      --shadow: 0 18px 50px rgba(24, 39, 75, 0.07);
+      --content: 1080px;
+    }
 
-        header {
-            text-align: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid #e0e0e0;
-        }
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
 
-        h1 {
-            font-size: clamp(2rem, 6vw, 2.5rem);
-            margin-bottom: 0.5rem;
-            color: #2c3e50;
-        }
+    html { scroll-behavior: smooth; }
 
-        .title {
-            font-size: 1.2rem;
-            color: #666;
-        }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(ellipse at 85% 0%, rgba(49, 95, 206, 0.08), transparent 34rem),
+        var(--page);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .profile-image {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 2rem auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    a { color: inherit; }
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 5px;
+    }
 
-        section {
-            margin-bottom: 2rem;
-        }
+    .skip-link {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      z-index: 10;
+      padding: .65rem 1rem;
+      transform: translateY(-160%);
+      border-radius: 10px;
+      background: var(--ink);
+      color: white;
+    }
+    .skip-link:focus { transform: translateY(0); }
 
-        h2 {
-            font-size: 1.5rem;
-            color: #2c3e50;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 0.5rem;
-        }
+    .shell {
+      width: min(var(--content), calc(100% - 3rem));
+      margin-inline: auto;
+    }
 
-        ul {
-            padding-left: 1.5rem;
-        }
+    .site-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-block: 1.4rem;
+    }
 
-        li {
-            margin-bottom: 0.5rem;
-        }
+    .wordmark {
+      font-size: .95rem;
+      font-weight: 800;
+      letter-spacing: -.035em;
+      text-decoration: none;
+    }
+    .wordmark span { color: var(--accent); }
 
-        a {
-            color: #2471a3;
-            text-decoration: none;
-        }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.35rem;
+      align-items: center;
+    }
+    .nav a {
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color .2s ease;
+    }
+    .nav a:hover { color: var(--accent); }
 
-        a:hover,
-        a:focus-visible {
-            text-decoration: underline;
-        }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(230px, .75fr);
+      align-items: center;
+      gap: clamp(2rem, 7vw, 6rem);
+      padding-block: clamp(4.5rem, 10vw, 8rem);
+    }
 
-        footer {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid #e0e0e0;
-            color: #888;
-            font-size: 0.9rem;
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      margin: 0 0 1.15rem;
+      color: var(--accent);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 24px;
+      height: 2px;
+      background: currentColor;
+      content: "";
+    }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 1.25rem;
-            }
-        }
-    </style>
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 750px;
+      margin-bottom: 1.2rem;
+      font-size: clamp(3rem, 8vw, 5.8rem);
+      line-height: .99;
+      letter-spacing: -.075em;
+    }
+    h1 span { color: var(--accent); }
+
+    .hero-copy {
+      max-width: 650px;
+      margin-bottom: 1.8rem;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: .7rem 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface);
+      font-size: .92rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); border-color: #c5d1e5; }
+    .button.primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: white;
+    }
+    .button.primary:hover { background: var(--accent-dark); }
+
+    .portrait-wrap {
+      position: relative;
+      width: min(100%, 330px);
+      justify-self: end;
+      padding: 12px;
+      border: 1px solid rgba(49, 95, 206, .14);
+      border-radius: 28px;
+      background: rgba(255, 255, 255, .72);
+      box-shadow: var(--shadow);
+      transform: rotate(2deg);
+    }
+    .portrait-wrap::before {
+      position: absolute;
+      inset: 18px -13px -13px 18px;
+      z-index: -1;
+      border: 1px solid rgba(49, 95, 206, .22);
+      border-radius: 28px;
+      content: "";
+    }
+    .portrait {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: 19px;
+      object-fit: cover;
+      background: var(--surface-soft);
+    }
+
+    .section {
+      padding-block: clamp(3.5rem, 7vw, 5.5rem);
+      border-top: 1px solid var(--line);
+      scroll-margin-top: 2rem;
+    }
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -.055em;
+    }
+    .section-heading p {
+      max-width: 420px;
+      margin-bottom: .15rem;
+      color: var(--muted);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.2rem;
+    }
+    .panel {
+      padding: clamp(1.4rem, 3vw, 2rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: 0 8px 30px rgba(24, 39, 75, .035);
+    }
+    .panel h3 {
+      margin-bottom: .65rem;
+      font-size: 1.12rem;
+      letter-spacing: -.025em;
+    }
+    .panel p {
+      margin-bottom: 0;
+      color: var(--muted);
+    }
+
+    .experience-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      align-items: start;
+    }
+    .experience-card .role {
+      margin-bottom: .25rem;
+      font-size: 1.3rem;
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+    .company { color: var(--accent); font-weight: 700; }
+    .tag {
+      display: inline-flex;
+      margin-top: .9rem;
+      padding: .35rem .7rem;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .experience-card p { max-width: 700px; margin: .8rem 0 0; color: var(--muted); }
+    .experience-mark {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 14px;
+      background: var(--surface-soft);
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .learning-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.2rem;
+    }
+    .number {
+      display: block;
+      margin-bottom: 1rem;
+      color: var(--accent);
+      font-size: .8rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .project-placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: clamp(1.4rem, 3vw, 2rem);
+      border: 1px dashed #bdc9dc;
+      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .55);
+    }
+    .project-placeholder h3 { margin-bottom: .4rem; }
+    .project-placeholder p { max-width: 650px; margin-bottom: 0; color: var(--muted); }
+
+    .interests {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+    }
+    .interest {
+      min-height: 150px;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      border-radius: 17px;
+      background: var(--surface);
+    }
+    .interest-icon {
+      display: block;
+      margin-bottom: .8rem;
+      font-size: 1.45rem;
+    }
+    .interest h3 { margin-bottom: .35rem; font-size: 1rem; }
+    .interest p { margin-bottom: 0; color: var(--muted); font-size: .9rem; }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: clamp(1.6rem, 4vw, 2.6rem);
+      border-radius: 24px;
+      background: #172033;
+      color: white;
+    }
+    .contact h2 {
+      margin-bottom: .5rem;
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      letter-spacing: -.05em;
+    }
+    .contact p { max-width: 520px; margin-bottom: 0; color: #c4ccda; }
+    .contact .button { flex-shrink: 0; border-color: white; background: white; color: var(--ink); }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-block: 1.8rem;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+    footer p { margin: 0; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--accent); }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-top: 3.5rem; }
+      .portrait-wrap { width: min(68%, 280px); justify-self: start; }
+      .about-grid, .learning-grid { grid-template-columns: 1fr; }
+      .interests { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: .8rem; }
+      .contact { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      .shell { width: min(var(--content), calc(100% - 2rem)); }
+      .site-header { align-items: flex-start; flex-direction: column; gap: .7rem; }
+      .nav { gap: .9rem; }
+      .nav a { font-size: .82rem; }
+      .interests { grid-template-columns: 1fr 1fr; gap: .65rem; }
+      .interest { min-height: 0; padding: 1rem; }
+      .experience-card { grid-template-columns: 1fr; }
+      .experience-mark { display: none; }
+      footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
-    <header>
-        <h1>Jaan Kollamaa</h1>
-        <p class="title">Tehnilise toe vanemspetsialist ettevõttes Cleveron AS</p>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="shell">
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Jaan Kollamaa, home">JAAN<span>.</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#development">Development</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
 
-    <main>
-        <img
-            src="profile.png"
-            alt="Jaan Kollamaa profiilipilt"
-            class="profile-image"
-        >
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Personal portfolio</p>
+          <h1 id="hero-title">Hi, I'm Jaan<span>.</span></h1>
+          <p class="hero-copy">
+            I'm a Senior Technical Support Specialist at Cleveron, currently studying
+            software development and exploring how to turn curiosity and problem-solving
+            into useful software.
+          </p>
+          <div class="actions">
+            <a class="button primary" href="#about">Get to know me</a>
+            <a class="button" href="https://github.com/jaankollamaa" target="_blank" rel="noopener noreferrer">Explore my GitHub ↗</a>
+          </div>
+        </div>
 
-        <section>
-            <h2>Lühitutvustus</h2>
-            <p>
-                Tere! Mina olen Jaan Kollamaa ja töötan ettevõttes
-                <strong>Cleveron AS</strong> tehnilise toe vanemspetsialistina.
-                Minu töö hõlmab keerukate tehniliste probleemide lahendamist
-                ja klientide abistamist.
-            </p>
-            <p>
-                Tehnoloogiarikkas töökeskkonnas töötamine on süvendanud minu
-                huvi uute lahenduste, automatiseerimise ja tarkvaraarenduse vastu.
-            </p>
-        </section>
+        <div class="portrait-wrap">
+          <img class="portrait" src="profile.png" alt="Portrait of Jaan Kollamaa" width="800" height="1000">
+        </div>
+      </section>
 
-        <section>
-            <h2>Hobid ja huvid</h2>
-            <ul>
-                <li><strong>Muusika</strong> – kuulan eri žanrite muusikat ja mulle meeldib kontsertidel käia.</li>
-                <li><strong>Arvutimängud</strong> – mängin nii üksinda kui ka koos sõpradega.</li>
-                <li><strong>Tehnoloogia</strong> – jälgin uusi arenguid, katsetan uusi tööriistu ja õpin programmeerimist.</li>
-		<li><strong>Raagritsikad</strong> – kasvatan kodus raagritsikaid ning nad on mu lemmikud koduloomad.</li>
-            </ul>
-        </section>
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <h2 id="about-title">A little about me</h2>
+          <p>Curious by nature, practical by habit, and always interested in learning something new.</p>
+        </div>
+        <div class="about-grid">
+          <article class="panel">
+            <h3>Problem-solving is where I start</h3>
+            <p>
+              My professional background is in technical support. I enjoy investigating
+              complicated issues, understanding how systems behave, and helping people
+              get things working again. That experience has shaped the way I approach
+              technology: stay curious, be methodical, and keep looking for the root cause.
+            </p>
+          </article>
+          <article class="panel">
+            <h3>Learning by building</h3>
+            <p>
+              I'm currently studying software development and expanding my skills through
+              hands-on learning. I'm at the beginning of this development journey, and
+              this portfolio will grow alongside the projects and experience I gain.
+            </p>
+          </article>
+        </div>
+      </section>
 
-        <section>
-            <h2>Kontakt</h2>
+      <section class="section" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <h2 id="experience-title">Professional experience</h2>
+          <p>Bringing together technical knowledge, troubleshooting, and customer support.</p>
+        </div>
+        <article class="panel experience-card">
+          <div>
+            <div class="role">Senior Technical Support Specialist</div>
+            <div class="company">Cleveron AS</div>
+            <span class="tag">Technical support</span>
             <p>
-                Leiad mind ka LinkedInist:
-                <a href="https://www.linkedin.com/in/jaan-kollamaa/" target="_blank" rel="noopener noreferrer">
-                    linkedin.com/in/jaan-kollamaa
-                </a>
+              I help investigate and resolve technical problems while supporting customers.
+              The role calls for analytical thinking, clear communication, patience, and
+              the ability to work through unfamiliar issues systematically.
             </p>
+          </div>
+          <div class="experience-mark" aria-hidden="true">C</div>
+        </article>
+      </section>
+
+      <section class="section" id="development" aria-labelledby="development-title">
+        <div class="section-heading">
+          <h2 id="development-title">The development journey</h2>
+          <p>A growing skill set, built one concept and one project at a time.</p>
+        </div>
+        <div class="learning-grid">
+          <article class="panel">
+            <span class="number">01 / LEARNING</span>
+            <h3>Software development</h3>
             <p>
-                GitHub:
-                <a href="https://github.com/jaankollamaa" target="_blank" rel="noopener noreferrer">
-                    github.com/jaankollamaa
-                </a>
+              I'm studying software development and building a stronger foundation in
+              programming, software concepts, and structured problem-solving.
             </p>
-        </section>
+          </article>
+          <article class="panel">
+            <span class="number">02 / EXPLORING</span>
+            <h3>Technology and practical solutions</h3>
+            <p>
+              I'm interested in how tools, systems, and automation can make everyday
+              tasks easier. I enjoy experimenting, learning how things fit together,
+              and finding opportunities to improve a process.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <h2 id="projects-title">Projects</h2>
+          <p>A space for experiments, coursework, and things I build along the way.</p>
+        </div>
+        <div class="project-placeholder">
+          <div>
+            <h3>This section is just getting started.</h3>
+            <p>
+              I'm working towards a collection of practical projects. In the meantime,
+              you can follow my learning and future work on GitHub.
+            </p>
+          </div>
+          <a class="button" href="https://github.com/jaankollamaa" target="_blank" rel="noopener noreferrer">Visit GitHub ↗</a>
+        </div>
+      </section>
+
+      <section class="section" id="interests" aria-labelledby="interests-title">
+        <div class="section-heading">
+          <h2 id="interests-title">Outside the screen</h2>
+          <p>Technology is a big interest, but it is far from the only one.</p>
+        </div>
+        <div class="interests">
+          <article class="interest">
+            <span class="interest-icon" aria-hidden="true">♫</span>
+            <h3>Music</h3>
+            <p>Discovering music across genres and enjoying live shows.</p>
+          </article>
+          <article class="interest">
+            <span class="interest-icon" aria-hidden="true">🎮</span>
+            <h3>Video games</h3>
+            <p>Single-player adventures, good stories, and playing with friends.</p>
+          </article>
+          <article class="interest">
+            <span class="interest-icon" aria-hidden="true">⌘</span>
+            <h3>Technology</h3>
+            <p>Exploring tools, new ideas, and the details behind how things work.</p>
+          </article>
+          <article class="interest">
+            <span class="interest-icon" aria-hidden="true">🌿</span>
+            <h3>Stick insects</h3>
+            <p>Keeping and learning about these fascinating little creatures.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="contact" aria-labelledby="contact-title">
+        <div class="contact">
+          <div>
+            <h2 id="contact-title">Let's connect.</h2>
+            <p>
+              Whether it's about technology, software development, or a shared interest,
+              feel free to find me on LinkedIn or GitHub.
+            </p>
+          </div>
+          <div class="actions">
+            <a class="button" href="https://www.linkedin.com/in/jaan-kollamaa/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+            <a class="button" href="https://github.com/jaankollamaa" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 Jaan Kollamaa</p>
+      <p>© <span id="year">2026</span> Jaan Kollamaa</p>
+      <p>Built with care and plain HTML &amp; CSS.</p>
     </footer>
+  </div>
+
+  <script>
+    // Keep the copyright year current without requiring a build step.
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
